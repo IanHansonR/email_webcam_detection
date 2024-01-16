@@ -9,6 +9,7 @@ RECEIVER = "ihanson1750@gmail.com"
 
 
 def send_email(image_path):
+    print("send_email function start.")
     email_message = EmailMessage(policy=default)
     email_message["Subject"] = "Object Detected"
     email_message.set_content('A new object has entered the field.')
@@ -23,6 +24,7 @@ def send_email(image_path):
     gmail.login(SENDER, PASSWORD)
     gmail.sendmail(SENDER, RECEIVER, email_message.as_string())
     gmail.quit()
+    print("send_email function end.")
 
 
 if __name__ == "__main__":
