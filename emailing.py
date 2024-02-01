@@ -3,6 +3,7 @@ import imghdr
 from email.message import EmailMessage
 from email.policy import default
 
+# Enter emailing details bellow:
 PASSWORD = ""
 SENDER = ""
 RECEIVER = ""

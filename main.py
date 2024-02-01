@@ -21,6 +21,7 @@ def clean_folder():
         os.remove(image)
     print("clean_folder function end.")
 
+
 while True:
     status = 0
     check, frame = video.read()
@@ -51,14 +52,13 @@ while True:
     status_list.append(status)
     status_list = status_list[-2:]
     if status_list[0] == 1 and status_list[1] == 0:
-        email_thread = Thread(target=send_email, args=(capture, ))
+        email_thread = Thread(target=send_email, args=(capture,))
         email_thread.daemon = True
         clean_thread = Thread(target=clean_folder)
         clean_thread.daemon = True
 
         email_thread.start()
         clean_thread.start()
-
 
     cv2.imshow("My Video", frame)
 
